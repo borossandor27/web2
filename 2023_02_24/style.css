@@ -1,0 +1,26 @@
+.draggable-elements {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.draggable {
+    height: 5rem;
+    width: 5rem;
+    font-size: 4rem;
+}
+
+.droppable-elements {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.droppable {
+    width: 6.5rem;
+    height: 6.5rem;
+    justify-content: center;
+    border: 3px dashed;
+    text-align: center;
+    margin: 1rem auto;
+}

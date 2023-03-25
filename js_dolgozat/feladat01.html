@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladat</title>
+</head>
+
+<body>
+    <div>
+
+        <input type="number" id="szamInput" placeholder="Adjon meg egy számot!">
+        <button id="hozzaad">Hozzáad</button>
+        <button id="kiir">Kiír</button>
+
+        <p id="lista"></p>
+    </div>
+    <script>
+        const szamInput = document.getElementById("szamInput");
+        const listaBekezdes = document.getElementById("lista");
+        const buttonHozzaad=document.getElementById("hozzaad");
+        buttonHozzaad.addEventListener('click',listabaRak);
+        const buttonKiir=document.getElementById("kiir");
+        buttonKiir.addEventListener('click',kiir);
+        lista
+        var szamLista = new Array();
+        function listabaRak() {
+            let szam = szamInput.value;
+            szamLista.push(szam);
+            szamInput.innerText = "";
+            console.table(szamLista);
+        }
+        function kiir() {
+            listaBekezdes.innerHTML = szamLista.join();
+        }
+    </script>
+</body>
+
+</html>

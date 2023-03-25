@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <button class="btn btn-primary" onmouseenter="kepBeallitas(true)" onmouseleave="kepBeallitas(false)" id="gomb" style="display: block;">Macska</button>
+    <br>
+    <img id="kep" src="" alt="Kép">
+    <script>
+        function kepBeallitas(rajtaAzEger) {
+            const src = "https://cdn.betterttv.net/emote/5de20a2c2dea2902de074598/3x.webp";
+            const kep = document.getElementById('kep');
+
+            if (rajtaAzEger) {
+                kep.src = src;
+            } else {
+                kep.src = "";
+                alert("MYAAA")
+            }
+        }
+
+        const gomb = document.getElementById('gomb');
+        const windowWidth = window.innerWidth;
+        const gombWidth =  150;
+        const margin = (Math.random() * (window.innerWidth - gomb.style.width));
+        console.log(windowWidth);
+        console.log(gombWidth);
+        console.log(margin);
+        gomb.style.marginLeft = margin + "px";
+    </script>
+</body>
+</html>

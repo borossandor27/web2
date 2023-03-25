@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladat</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+</head>
+
+<body>
+    <!-- Készíts egy alkalmazást, amely szöveget kisbetűssé vagy nagybetűssé tud alakítani. -->
+    <form>
+        <label for="szoveg">Átalakítandó szöveg</label>
+        <input type="text" id="szoveg">
+        <input type="radio" id="lower" name="convert" value="toLowerCase"><label for="lower">Kisbetűssé</label>
+        <input type="radio" id="upper" name="convert" value="toUpperCase"><label for="upper">Nagybetűssé</label>
+        <input type="button" value="Átalakít" onclick="atalakit()">
+        <input type="reset" value="Törlés">
+    </form>
+    <script>
+        function atalakit() {
+            let szoveg = document.getElementById("szoveg").value;
+            let radios = document.getElementsByName('convert');
+            let convert = '';
+
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    // do whatever you want with the checked radio
+                    convert = radios[i].value;
+
+                    // only one radio can be logically checked, don't check the rest
+                    break;
+                }
+            }
+            szoveg = szoveg.trim();
+            if (szoveg.length === 0) {
+                alert(
+                    "nem adott meg szöveget!"
+                );
+
+            } else if (convert === "toLowerCase") {
+                szoveg = szoveg.toLowerCase();
+            } else if (convert === "toUpperCase") {
+                szoveg = szoveg.toUpperCase();
+            };
+            alert(szoveg);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téglalap</title>
+    <script src="teglalap.js"></script>
+</head>
+<body>
+    <form onsubmit="hozzaad(event)">
+        <div class="mb-3">
+            <label for="input_a" class="form-label">a:</label>
+            <input type="number" id="input_a" name="a" class="form-control" placeholder="a" min="1" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="input_b" class="form-label">b:</label>
+            <input type="number" id="input_b" name="b" class="form-control" placeholder="b" min="1" required>
+        </div>
+
+        <button type="submit">Hozzáad</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>kerület</th>
+                <th>terület</th>
+            </tr>
+        </thead>
+        <tbody id="tablazat">
+
+        </tbody>
+    </table>
+
+    <script>
+        function hozzaad(e) {
+            e.preventDefault();
+            const input_a = document.getElementById('input_a');
+            const input_b = document.getElementById('input_b');
+            const tablazat = document.getElementById('tablazat');
+
+            const a = parseInt(input_a.value);
+            const b = parseInt(input_b.value);
+
+            const teglalap = new Teglalap(a, b);
+            tablazat.innerHTML += teglalap.toString();
+        }
+    </script>
+</body>
+</html>

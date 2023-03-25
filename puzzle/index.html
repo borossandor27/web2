@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./puzzle.css">
+    <title>Puzzle</title>
+</head>
+
+<body>
+    <div id="panel">
+        <div id="bal">
+            <div id="start">
+                <button id="btn">Start</button>
+            </div>
+            <div id="clockdiv"><span class="minutes">5</span>:<span class="seconds">00</span></div>
+            <div id="nehezseg">
+                <select name="fokozat" id="fokozat">
+                    <option value="2">2x2</option>
+                    <option value="3" selected>3x3</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                </select>
+            </div>
+            <div id="kepvalasztas">
+                <select name="kep" id="kep">
+                    <option value="kenguru">kenguru</option>
+                    <option value="krokodil">krokodil</option>
+                    <option value="mokus" selected>mókus</option>
+                    <option value="papagaj">papagáj</option>
+                    <option value="pingvin">pingvin</option>
+                    <option value="tengericsillag">tengericsillag</option>
+                </select>
+            </div>
+            <div id="lepesek">
+                Megtett lépések száma: <span>0</span>
+            </div>
+            <div id="minta">
+                <img id="mintakep"  src="./puzzle_kepek/mokus.png" alt="mintakep" title="Ezt kell kirakni">
+            </div>
+        </div>
+        <div id="jobb">
+            <div class="grid-container" id="puzzle">
+              </div>
+        </div>
+
+    </div>
+    <script src="./puzzle.js"></script>
+    <script src="./clock.js"></script>
+    <script src="./forrasKepek.js"></script>
+</body>
+
+</html>

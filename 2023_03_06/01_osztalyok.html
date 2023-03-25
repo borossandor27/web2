@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS osztályok</title>
+    <script src="pont.js"></script>
+</head>
+
+<body>
+    <form id="pont_urlap">
+        <div class="mb-3">
+            <label for="input_x" class="form-label">X:</label>
+            <input type="number" id="input_x" name="x" class="form-control" placeholder="X" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="input_y" class="form-label">Y:</label>
+            <input type="number" id="input_y" name="y" class="form-control" placeholder="Y" required>
+        </div>
+
+        <button type="button" onclick="hozzaAd();">Hozzáad</button>
+    </form>
+
+    <script>
+        const pontok = [];
+
+        function hozzaAd() {
+            const input_x = document.getElementById('input_x');
+            const input_y = document.getElementById('input_y');
+            const x = parseInt(input_x.value);
+            const y = parseInt(input_y.value);
+            pontok.push(new Pont(x, y));
+
+            // konzolra táblázatos formában írja ki a lista tartalmát
+            console.table(pontok);
+        }
+    </script>
+
+    <script>
+        const pont = new Pont(3, 4);
+        console.log(pont);
+        //console.log(pont.#x); //privát adattag nem elérhető
+        console.log(pont.getX()); //getterrel elérhető az adattag.
+        console.log(pont.x);
+        pont.x = 10;
+        console.log(pont);
+        console.log(pont.toString());
+    </script>
+
+</body>
+
+</html>

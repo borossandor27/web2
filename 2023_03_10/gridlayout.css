@@ -1,0 +1,113 @@
+/* Set the background color of body to tan */
+html,
+body {
+  background-color: tan;
+  font-size: 3.5vmax;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  height: 100vh;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-areas: 'header menu menu menu'
+    'hero hero hero hero'
+    'main main . image'
+    'main main . extra'
+    'banner banner banner banner';
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0px;
+  text-align: center;
+  justify-items: stretch;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.grid-item {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+#fejlec {
+  grid-area: header;
+  background: black;
+  color: white;
+}
+
+#menu {
+  grid-area: menu;
+  background: #ef3c4f;
+  color: white;
+}
+
+#hero {
+  grid-area: hero;
+  background: #4c86c6;
+  color: white;
+}
+
+#main {
+  grid-area: main;
+  background: #24344b;
+  color: white;
+}
+
+#banner {
+  grid-area: banner;
+  background: #ffd068;
+  color: black;
+}
+
+#extra {
+  grid-area: extra;
+  background: #4dbd97;
+  color: black;
+}
+
+#image {
+  grid-area: image;
+  background: #c1e4e6;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 950px) {
+  body {
+    background-color: blue;
+  }
+
+  #grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 4fr 4fr 2fr 2fr;
+    grid-template-areas:
+      "header header header header"
+      "hero hero hero hero"
+      "menu main main main"
+      "menu banner banner banner"
+      "menu extra extra image";
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 550px) {
+  body {
+    background-color: olive;
+  }
+
+  #grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 4fr 4fr 2fr 2fr 2fr;
+    grid-template-areas:
+      "header"
+      "menu"
+      "hero"
+      "main"
+      "banner"
+      "extra"
+      "image";
+  }
+}

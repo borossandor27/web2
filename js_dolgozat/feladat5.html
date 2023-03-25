@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. feladat</title>
+</head>
+
+<body>
+    <p><input type="text" id="teljesNev" placeholder="Teljes név"></p>
+    <p><input type="text" id="telefonszam" placeholder="Telefonszám"></p>
+    <p><input type="number" id="iranyitoszam" placeholder="irányítószám">
+        <input type="text" id="helyseg" placeholder="Helység">
+        <input type="text" id="utca" placeholder="Utca">
+        <input type="text" id="hazszam" placeholder="Házszám">
+    </p>
+    <p>
+        <select id="alap">
+            <option value="tejfölös" selected>tejfölös</option>
+            <option value="paradicsomos">paradicsomos</option>
+        </select>
+    </p>
+    <div>
+        <p>
+            <input type="checkbox" name="feltet1" class="feltet" value="sonka">
+            <label for="feltet1">sonka</label>
+        </p>
+        <p>
+            <input type="checkbox" name="feltet2" class="feltet" value="kukorica">
+            <label for="feltet2">kukorica</label>
+        </p>
+        <p>
+            <input type="checkbox" name="feltet3" class="feltet" value="bacon">
+            <label for="feltet3">bacon</label>
+        </p>
+        <p>
+            <input type="checkbox" name="feltet4" class="feltet" value="tojás">
+            <label for="feltet4">tojás</label>
+        </p>
+        <textarea placeholder="Megjegyzés" id="megjegyzes">
+
+        </textarea>
+        <p><button id="felvetel">Felvétel</button></p>
+    </div>
+    <script>
+        const teljesNev=document.getElementById("teljesNev");
+        const telefonszam=document.getElementById("telefonszam");
+        const iranyitoSzam=document.getElementById("iranyitoszam");
+        const helyseg=document.getElementById("helyseg");
+        const utca=document.getElementById("utca");
+        const hazSzam=document.getElementById("hazszam");
+        const alap=document.getElementById("alapSelect");
+        const feltetek=document.querySelectorAll('.feltet');
+        const buttonFelvetel=document.getElementById("buttonFelvetel");
+    </script>
+</body>
+
+</html>

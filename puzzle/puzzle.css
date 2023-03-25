@@ -1,0 +1,71 @@
+body {
+    background-color: bisque;
+}
+
+img#mintakep {
+    width: 25vw;
+    height: auto;
+}
+
+#clockdiv {
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    padding: 10px;
+    margin: 3vh 3vw;
+    gap: 0px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+
+#bal {
+    width: 50%;
+    float: left;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "inditogomb . ido"
+        "minta minta minta"
+        "nehezseg kep lepesszam";
+}
+
+#clockdiv {
+    text-align: center;
+    grid-area: ido;
+}
+
+#start {
+    grid-area: inditogomb;
+}
+
+#nehezseg {
+    grid-area: nehezseg;
+}
+
+#lepesek {
+    grid-area: lepesszam;
+    text-align: right;
+}
+
+#minta {
+    grid-area: minta;
+    text-align: center;
+}
+
+#mintakep {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid lightgray;
+    margin: 2vw;
+}
+#kepvalasztas {
+    grid-area: kep;
+}

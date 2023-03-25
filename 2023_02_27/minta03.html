@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="minta03.js"></script>
+</head>
+<body>
+    <!-- 
+        Készíts egy űrlapot, az alábbi adatokkal: (Programozási preferenciák)
+            - Hány programozási nyelvet használ a mindennapokban? - number
+            - Ezek közül melyeket használja a leggyakrabban? - text
+            - Milyen fejlesztői környezet használ leggyakrabban - select/option
+            - Milyen színtémát használ a fejlesztői környezetben - világos/sötét radio-button
+        
+        Az űrlap elküldésekor ellenőrizd az adatokat (html validáció is megfelelő):
+            - Minden mező kitöltése kötelező
+                - legalább egy lehetőség kiválasztása kötelező select / radio inputoknál
+            - szám minimum 1
+
+
+        Ha az adatok megfelelőek akkor készíts belőlük egy js objektumot amit írj ki a konzolra
+    -->
+
+    <main class="container">
+        <form name="programozasi_preferenciak">
+            <div class="mb-3">
+                <label for="input_hasznalt_nyelvek_szama" class="form-label">Hány programozási nyelvet használ a mindennapokban:</label>
+                <input type="number" id="input_hasznalt_nyelvek_szama" name="nyelvek_szama" class="form-control" placeholder="Hány programozási nyelvet használ a mindennapokban" required min="1">
+            </div>
+            <div class="mb-3">
+                <label for="input_leggyakrabban_hasznal_nyelv" class="form-label">Ezek közül melyeket használja leggyakrabban:</label>
+                <input type="text" id="input_leggyakrabban_hasznal_nyelv" name="leggyakrabban_hasznal_nyelv" class="form-control" placeholder="Ezek közül melyeket használja leggyakrabban" required>
+            </div>
+            <div class="mb-3">
+                <label for="input_IDE" class="form-label">Milyen fejlesztői környezetet használ leggyakrabban:</label>
+                <select name="IDE" id="input_IDE" class="form-control" required>
+                    <option value="" disabled selected>Milyen fejlesztői környezetet használ leggyakrabban</option>
+                    <option value="VSCode">VSCode</option>
+                    <option value="Visual Studio">Visual Studio</option>
+                    <option value="JetBrains termék">JetBrains termék (IntelliJ, PyCharm, WebStorm, Rider, stb.)</option>
+                    <option value="Eclipse">Eclipse</option>
+                    <option value="NetBeans">NetBeans</option>
+                    <option value="Egyéb">Egyéb</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="input_szintema" class="form-label">Milyen színtémát használ a fejlesztői környezetben:</label>
+                <div id="input_szintema">
+                    <input type="radio" name="szintema" id="szintema_vilagos" value="Világos" class="form-check-input" required>
+                    <label for="szintema_vilagos" class="form-check-label">Világos</label>
+                    <input type="radio" name="szintema" id="szintema_sotet" value="Sötét" class="form-check-input" required>
+                    <label for="szintema_sotet" class="form-check-label">Sötét</label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary w-100">Elküld</button>
+        </form>
+    </main>
+
+</body>
+</html>

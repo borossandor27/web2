@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="minta01.js"></script>
+</head>
+
+<body>
+    <!-- 
+        Vegyél fel két szám típusú beviteli mezőt. A mezők felirata 'a' és 'b' legyen. 
+        
+        A beviteli mezők alá egy gombot is helyezz el 'Hozzáad' felirattal.        
+        Gombra kattintva tárold el a két számot egy objektumban amit adj hozzá egy listához. Az objektum az alábbi adatokat tárolja a számokról:
+            - a
+            - b
+            - osszeg (függvény amely kiszámolja a két szám összegét)
+            - kulonbseg (függvény amely kiszámolja a két szám különbségét)
+        
+        A 'Hozzáad' gomb alá helyezz el még egy gombot 'Megjelenít' felirattal. A gombra kattintva jelenítsd meg az összes eddig felvett objektumot html táblázatban. A táblázat első sora mindig a legutoljára felvett elem legyen, majd felvétellel ellentétes sorrendben jelenjen meg a többi elem.
+
+        Az oldalt formázd bootstrap segítségével
+    -->
+    <main class="container">
+        <section>
+            <h2>Adatok felvétele</h2>
+            <form onsubmit="event.preventDefault();">
+                <div class="mb-3">
+                    <label for="input_a" class="form-label">a:</label>
+                    <input type="number" id="input_a" class="form-control" placeholder="a">
+                </div>
+
+                <div class="mb-3">
+                    <label for="input_b" class="form-label">b:</label>
+                    <input type="number" id="input_b" class="form-control" placeholder="b">
+                </div>
+
+                <button class="btn btn-secondary w-100 mb-1" type="submit" id="hozzaad_gomb">Hozzáad</button>
+                <button class="btn btn-secondary w-100" type="button" id="megjelenit_gomb">Megjelenít</button>
+            </form>
+        </section>
+        <section>
+            <h2>Adatok megjelenítése</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>a</th>
+                        <th>b</th>
+                        <th>Összeg</th>
+                        <th>Különbség</th>
+                    </tr>
+                </thead>
+                <tbody id="megjelenites"></tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

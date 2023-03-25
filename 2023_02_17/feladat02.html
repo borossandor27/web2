@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. feladat</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <style>
+        p {
+            padding: 10px;
+            display: block;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Készíts egy alkalmazást, amely szöveget kisbetűssé vagy nagybetűssé tud alakítani. -->
+    <form>
+        <p><label for="username">Felhasználó neve:</label> <input type="text" id="username" required></p>
+        <p><label for="password1">Jelszó1:</label> <input type="password" id="password1" required></p>
+        <p><label for="password2">Jelszó2:</label> <input type="password" id="password2" required></p>
+        <p><label for="email">Email cím:</label> <input type="email" id="email" required></p>
+        <p><label for="birth">Született:</label> <input type="date" id="birth" required></p>
+        <p><input type="button" value="Regisztrál" onclick="validal()">
+            <input type="reset" value="Törlés">
+        </p>
+    </form>
+    <script>
+        function validal() {
+            let valid = true;
+            let userObject = {};
+            let username = document.getElementById('username').value;
+            let pass1 = document.getElementById('password1').value;
+            let pass2 = document.getElementById('password2').value;
+            let email = document.getElementById('email').value;
+            let birthDate = document.getElementById('birth').value;
+            if (check_username(username.trim())) {
+                userObject['userName'] = username;
+            } else if (check_password(pass1, pass2)) {
+                userObject['password'] = pass1;
+            } else if (isValidDate("2023-02-16")) {
+                userObject['birthDate'] = birthDate;
+            } else if (check_email(email)) {
+                userObject['email'] = email;
+            }
+            
+            console.log(JSON.stringify(userObject));
+        }
+        function check_username(param) {
+            let valid = true;
+            if (param.length < 5 || param.length > 16) {
+                alert("Nem megfelelő hosszúságú felhasználó név!");
+                valid = false;
+            }
+            return valid;
+        }
+        function check_password(param1, param2) {
+            let valid = true;
+            if (param1 < 5) {
+                alert("túl rövid jelszó!");
+                return false;
+            }
+            if (param2 < 5) {
+                alert("túl rövid jelszó!");
+                return false;
+            }
+
+            if (param1 != param2) {
+                alert("nem egyezik a két jelszó!");
+                return false;
+            }
+            return valid;
+        }
+        function isValidDate(d) {
+            return d instanceof Date && !isNaN(d);
+        }
+        function check_email(params) {
+            let valid = true;
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (input.value.match(validRegex)) {
+                alert("Valid email address!");
+                return true;
+            } else {
+                alert("Invalid email address!");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

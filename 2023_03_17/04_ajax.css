@@ -1,0 +1,17 @@
+html, body {
+    height: 100vh;
+}
+body {
+    background-color: aqua;
+}
+#sheet {
+    border: 1px solid #ccc;
+    width: 70%;
+    height: 100%;
+    margin: 2vh auto;
+    padding: 2vw;
+}
+#adatok{
+    background-color: lightgrey;
+    border: 1px solid #666;
+}
