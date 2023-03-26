@@ -5,41 +5,43 @@ const selectButton = document.querySelector("#select");
 const updateButton = document.querySelector("#update");
 const insertButton = document.querySelector("#insert");
 const deleteButton = document.querySelector("#delete");
-const users = document.querySelectorAll("#users");
-insertButton.addEventListener('click', insert);
+const cardsDiv = document.querySelector("#userCards");
+
+insertButton.addEventListener("click", insert);
 
 async function insert() {
-    let name = nameInput.value;
-    let email = emailInput.value;
-    let date = dateInput.value;
-
+  let name = nameInput.value;
+  let email = emailInput.value;
+  let date = dateInput.value;
 }
 
-selectButton.addEventListener('click', select);
+selectButton.addEventListener("click", select);
+
 function select() {
-    //-- a már meglévők eltávolítása
-    while (users.lastchild) {
-        users.removeChild(users[0].lastchild);
-    }
-    users.innerHTML = '';
+  //-- a már meglévők eltávolítása
+  removeAllChilds(document.getElementById("userCards"));
+  //-- lekérdezzük a távoli helyről az adatokat
+  fetch("https://api-generator.retool.com/3B5UTv/data")
+    .then((response) => response.json())
+    .then((data) => cards(data));
+}
 
-    //-- lekérdezzük a távoli helyről az adatokat
-    fetch("https://api-generator.retool.com/3B5UTv/data")
-        .then((response) => response.json())
-        .then((data) => cards(data));
-
+function removeAllChilds(parent) {
+  while (parent.firstChild) {
+    // The list is LIVE so it will re-index each call
+    parent.removeChild(parent.lastChild);
+  }
 }
 
 function cards(params) {
-    console.log(params);
-    for (let i = 0; i < params.length; i++) {
-        let date=new Date(params[i].birthdate);
-        let year=date.getFullYear();
-        let month=date.getMonth();
-        let day=date.getDate();
-        console.log(date);
-        const newCard = document.createElement('div');
-        newCard.innerHTML = `<div class="card" style="width: 18rem;">
+  const panel = userCards;
+  for (let i = 0; i < params.length; i++) {
+    let date = new Date(params[i].birthdate);
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let day = date.getDate();
+    const newCard = document.createElement("div");
+    newCard.innerHTML = `<div class="card m-3" style="width: 18rem;">
         <div class="card-header">
              ${params[i].name}
         </div>
@@ -48,8 +50,7 @@ function cards(params) {
                 <li class="list-group-item">${year} - ${month} - ${day}</li>
             </ul>
             </div>`;
-        users[0].appendChild(newCard);
-        console.log(newCard.innerHTML);
-    }
-
+    panel.appendChild(newCard);
+    //console.log(newCard.innerHTML);
+  }
 }
