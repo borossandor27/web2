@@ -2,11 +2,11 @@ const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const dateInput = document.querySelector("#date");
 const selectButton = document.querySelector("#select");
-//const updateButton = document.querySelector("#update");
+const updateButton = document.querySelector("#update");
 const insertButton = document.querySelector("#insert");
-//const deleteButton = document.querySelector("#delete");
-const divCards = document.querySelector("#divCards");
-//const users = document.querySelectorAll("#users");
+const deleteButton = document.querySelector("#delete");
+const cardsDiv = document.querySelector("#userCards");
+
 insertButton.addEventListener("click", insert);
 
 async function insert() {
@@ -19,21 +19,22 @@ selectButton.addEventListener("click", select);
 
 function select() {
   //-- a már meglévők eltávolítása
-  removeAllChildNodes(divCards);
-
+  removeAllChilds(document.getElementById("userCards"));
   //-- lekérdezzük a távoli helyről az adatokat
   fetch("https://api-generator.retool.com/3B5UTv/data")
     .then((response) => response.json())
     .then((data) => cards(data));
 }
 
-function removeAllChildNodes(parent) {
+function removeAllChilds(parent) {
   while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+    // The list is LIVE so it will re-index each call
+    parent.removeChild(parent.lastChild);
   }
 }
 
 function cards(params) {
+  const panel = userCards;
   for (let i = 0; i < params.length; i++) {
     let date = new Date(params[i].birthdate);
     let year = date.getFullYear();
@@ -48,14 +49,8 @@ function cards(params) {
                 <li class="list-group-item">${params[i].email}</li>
                 <li class="list-group-item">${year} - ${month} - ${day}</li>
             </ul>
-            <div class="d-flex justify-content-around">
-              <form>
-                <button type="button" class="btn btn-outline-primary" id="update"> Update</button>
-                <button type="button" class="btn btn-outline-danger" id="delete"><i class="fa-regular fa-trash-can"></i> Delete</button>
-              </form>
-            </div>
-      </div>`;
-    divCards.appendChild(newCard);
+            </div>`;
+    panel.appendChild(newCard);
     //console.log(newCard.innerHTML);
   }
 }

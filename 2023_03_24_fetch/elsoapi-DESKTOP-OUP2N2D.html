@@ -19,7 +19,7 @@
 
 <body>
   <div class="container">
-    <form class="mb-3">
+    <form>
       <fieldset>
         <legend>Kiválasztott felhasználó</legend>
         <div class="mb-3">
@@ -35,12 +35,18 @@
           <input type="date" class="form-control" id="date">
         </div>
         <div>
-          <button type="button" class="btn btn-outline-success" id="insert"> Create</button>
-          <button type="button" class="btn btn-outline-secondary" id="select"> Read</button>
+          <button type="button" class="btn btn-outline-success" id="insert"><i class="fa-solid fa-user-plus"></i> Create</button>
+          <button type="button" class="btn btn-outline-secondary" id="select"><i class="fa-solid fa-users"></i> Read</button>
+          <button type="button" class="btn btn-outline-primary" id="update"><i class="fas fa-database"></i> Update</button>
+          <button type="button" class="btn btn-outline-danger" id="delete"><i class="fa-regular fa-trash-can"></i> Delete</button>
         </div>
-      </fieldset>
     </form>
-    <div id="divCards"></div>
+    </fieldset>
+    <div id="userCards">
+      <p>valami1</p>
+      <p>valami1</p>
+      <p>valami1</p>
+    </div>
   </div>
   <script src="./elsoapi.js"></script>
 </body>
