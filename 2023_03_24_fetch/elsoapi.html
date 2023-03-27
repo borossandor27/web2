@@ -22,16 +22,22 @@
     <h3 id="currentTime"></h3>
   </header>
   <div class="container">
-    <form class="mb-3">
+    <form class="mb-3 was-validated">
       <fieldset>
         <legend>Kiválasztott felhasználó</legend>
         <div class="mb-3">
           <label for="name" class="form-label">User name</label>
-          <input type="text" class="form-control" id="name" required>
+          <input type="text" class="form-control" id="name" placeholder="Enter username"  required>
+          <div class="valid-feedback">
+            Nagyon jó!
+          </div>
+          <div class="invalid-feedback">
+            Kérem, adjon meg felhasználó nevet!
+          </div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" required>
+          <input type="email" class="form-control is-invalid" id="email" required>
         </div>
         <div class="mb-3">
           <label for="date" class="form-label">Email address</label>
