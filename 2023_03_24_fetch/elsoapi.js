@@ -17,8 +17,9 @@ const deleteButton = document.querySelector("#delete");
 const updateValaszt = document.getElementsByName("updateValszt");
 const divCards = document.querySelector("#divCards");
 
-selectButton.addEventListener("click", select);
-insertButton.addEventListener("click", insert);
+selectButton.addEventListener("click", selectAllUser);
+insertButton.addEventListener("click", insertUser);
+insertButton.addEventListener("click", deleteUser);
 //updateValaszt.addEventListener("click", updateValasztas)
 
 function onLoad() {
@@ -39,11 +40,11 @@ function onLoad() {
   const currentTimeElement = document.querySelector("#currentTime");
   currentTimeElement.innerHTML = datetime;
 }
-function insert() {
+function insertUser() {
   let insertURL = "https://api-generator.retool.com/3B5UTv/data";
   let sendingBody = getUserJSON();
-  //var valami = postData(insertURL,sendingBody);
-  //console.log(valami);
+  var valami = postData(insertURL,sendingBody);
+  console.log(valami);
 }
 function getUserJSON() {
   //-- validálás?
@@ -74,7 +75,7 @@ async function postData(url = "", data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-function select() {
+function selectAllUser() {
   //-- a már meglévők eltávolítása
   removeAllChildNodes(divCards);
 
@@ -108,7 +109,7 @@ function cards(params) {
             <div class="d-flex justify-content-around">
               <form>
                 <button type="button" class="btn btn-outline-primary" name="updateValaszt" value="${params[i].id}" onclick="updateValasztas(this)"> Update</button>
-                <button type="button" class="btn btn-outline-danger" name="delete" value="${params[i].id}"><i class="fa-regular fa-trash-can"></i> Delete</button>
+                <button type="button" class="btn btn-outline-danger" name="delete" value="${params[i].id}" onclick="deleteUser()"><i class="fa-regular fa-trash-can"></i> Delete</button>
               </form>
             </div>
       </div>`;
@@ -118,4 +119,8 @@ function cards(params) {
 }
 function updateValasztas(element) {
   id = element.value;
+}
+
+function deleteUser(userid) {
+  
 }
