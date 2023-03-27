@@ -50,8 +50,8 @@ function getUserJSON() {
   let name = nameInput.value;
   let email = emailInput.value;
   let date = dateInput.value;
-  date=new Date(date);
-  console.log(typeof(date),date.toISOString());
+  date = new Date(date).toISOString().split("T")[0];
+  console.log(date);
   let user = `{ "name": "${name}", "email": "${email}", "birthdate": "${date}" }`;
   return JSON.parse(user);
 }
