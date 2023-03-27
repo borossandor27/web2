@@ -16,11 +16,12 @@ const insertButton = document.querySelector("#insert");
 const deleteButton = document.querySelector("#delete");
 const updateValaszt = document.getElementsByName("updateValszt");
 const divCards = document.querySelector("#divCards");
+const useridHidden = document.querySelector("#userid");
 
-selectButton.addEventListener("click", selectAllUser);
+selectButton.addEventListener("click", showAllUser);
 insertButton.addEventListener("click", insertUser);
-insertButton.addEventListener("click", deleteUser);
-//updateValaszt.addEventListener("click", updateValasztas)
+deleteButton.addEventListener("click", deleteUser);
+updateButton.addEventListener("click", updateUser);
 
 function onLoad() {
   var currentdate = new Date();
@@ -43,7 +44,7 @@ function onLoad() {
 function insertUser() {
   let insertURL = "https://api-generator.retool.com/3B5UTv/data";
   let sendingBody = getUserJSON();
-  var valami = postData(insertURL,sendingBody);
+  var valami = postData(insertURL, sendingBody);
   console.log(valami);
 }
 function getUserJSON() {
@@ -75,7 +76,7 @@ async function postData(url = "", data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-function selectAllUser() {
+async function showAllUser() {
   //-- a már meglévők eltávolítása
   removeAllChildNodes(divCards);
 
@@ -99,17 +100,16 @@ function cards(params) {
     let day = date.getDate();
     const newCard = document.createElement("div");
     newCard.innerHTML = `<div class="card m-3" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card-header  bg-secondary text-white">
              ${params[i].name}
         </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${params[i].email}</li>
                 <li class="list-group-item">${year} - ${month} - ${day}</li>
             </ul>
-            <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-around p-2">
               <form>
-                <button type="button" class="btn btn-outline-primary" name="updateValaszt" value="${params[i].id}" onclick="updateValasztas(this)"> Update</button>
-                <button type="button" class="btn btn-outline-danger" name="delete" value="${params[i].id}" onclick="deleteUser()"><i class="fa-regular fa-trash-can"></i> Delete</button>
+                <button type="button" class="btn btn-outline-primary" name="kivalaszt" value="${params[i].id}" onclick="Valasztas(this)"><i class="fa-solid fa-check"></i> Select</button>
               </form>
             </div>
       </div>`;
@@ -117,10 +117,53 @@ function cards(params) {
     //console.log(newCard.innerHTML);
   }
 }
-function updateValasztas(element) {
-  id = element.value;
+function updateUser() {
+  let url = `https://api-generator.retool.com/3B5UTv/data/${userid.value}`;
+  const data = getUserJSON();
+
+  fetch(url, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      nameInput.value = "";
+      emailInput.value = "";
+      useridHidden.value = "-1";
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  showAllUser();
 }
 
 function deleteUser(userid) {
-  
+
+}
+
+async function Valasztas(userid) {
+  nameInput.value = "";
+  emailInput.value = "";
+  useridHidden.value = "-1";
+  //-- kiválasztott user adatainak a betöltése a beviteli mezőkbe
+  let url = `https://api-generator.retool.com/3B5UTv/data/${userid.value}`;
+  //-- lekérdezzük a távoli helyről az adatokat
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => filling_input_fields(data));
+  removeAllChildNodes(divCards);
+}
+
+function filling_input_fields(params) {
+  nameInput.value = params['name'];
+  emailInput.value = params['email'];
+  let date = new Date(params['birthdate']);
+  date.setMonth(date.getMonth() - 1);
+  date = date.toISOString().split('T')[0];
+  dateInput.value = date;
+  useridHidden.value = params['id'];
 }
