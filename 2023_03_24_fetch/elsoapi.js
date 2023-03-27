@@ -131,9 +131,7 @@ function updateUser() {
     .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
-      nameInput.value = "";
-      emailInput.value = "";
-      useridHidden.value = "-1";
+      clear_input_fields();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -141,14 +139,14 @@ function updateUser() {
   showAllUser();
 }
 
-function deleteUser(userid) {
 
-}
-
-async function Valasztas(userid) {
+function clear_input_fields(params) {
   nameInput.value = "";
   emailInput.value = "";
   useridHidden.value = "-1";
+}
+async function Valasztas(userid) {
+  clear_input_fields();
   //-- kiválasztott user adatainak a betöltése a beviteli mezőkbe
   let url = `https://api-generator.retool.com/3B5UTv/data/${userid.value}`;
   //-- lekérdezzük a távoli helyről az adatokat
@@ -166,4 +164,8 @@ function filling_input_fields(params) {
   date = date.toISOString().split('T')[0];
   dateInput.value = date;
   useridHidden.value = params['id'];
+}
+
+function deleteUser(userid) {
+
 }
