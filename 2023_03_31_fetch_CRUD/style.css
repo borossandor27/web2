@@ -1,0 +1,11 @@
+input[type="number"]{
+    color: brown;
+    text-align: right;
+}
+fieldset{
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 2vh 3vw;
+    margin-top: 3vh;
+    background-color: #eee;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Képek véletlenszerűen</title>
+    <style>
+        body {
+            padding: 3vw;
+        }
+
+        img {
+            height: 50vh;
+            width: auto;
+            padding: 2vw;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="image">
+            <img src="https://random.responsiveimages.io/v1/docs" alt="valami" title="Random kép" id="kep">
+        </div>
+        <button onclick="kepcsere()">képcsre</button>
+    </div>
+    <script>
+        function kepcsere() {
+            document.getElementById("kep").src = "https://random.responsiveimages.io/v1/docs";
+        }
+    </script>
+</body>
+
+</html>
