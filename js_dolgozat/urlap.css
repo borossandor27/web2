@@ -1,0 +1,14 @@
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.likert-list li {
+    float: left;
+    list-style-type: none;
+}
+
+.likert-list li button {
+    border: none;
+}
