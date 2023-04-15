@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "name": "Facebook",
+        "darab": "65",
+        "product": "Túrós rétes",
+        "fizetendo": "2091"
+    },
+    {
+        "id": 2,
+        "name": "Pfizer",
+        "darab": "25",
+        "product": "Almás rétes",
+        "fizetendo": "2293"
+    },
+    {
+        "id": 3,
+        "name": "Valero Energy",
+        "darab": 27,
+        "product": "Almás rétes",
+        "fizetendo": 47068
+    },
+    {
+        "id": 4,
+        "name": "GitHub",
+        "darab": 85,
+        "product": "Almás pite",
+        "fizetendo": 7277
+    },
+    {
+        "id": 5,
+        "name": "CVS Health",
+        "darab": 85,
+        "product": "Krémes",
+        "fizetendo": 81366
+    },
+    {
+        "id": 6,
+        "name": "United Airlines",
+        "darab": 77,
+        "product": "Rákóczi túrós",
+        "fizetendo": 60993
+    },
+    {
+        "id": 7,
+        "name": "JP Morgan Chase",
+        "darab": 6,
+        "product": "Túrós béles",
+        "fizetendo": 29854
+    },
+    {
+        "id": 8,
+        "name": "Allstate",
+        "darab": 91,
+        "product": "Túrós béles",
+        "fizetendo": 17997
+    },
+    {
+        "id": 9,
+        "name": "Bank of America",
+        "darab": 98,
+        "product": "Almás rétes",
+        "fizetendo": 7753
+    },
+    {
+        "id": 10,
+        "name": "Bumble",
+        "darab": 92,
+        "product": "Krémes",
+        "fizetendo": 11179
+    },
+    {
+        "id": 11,
+        "name": "Walt Disney",
+        "darab": 8,
+        "product": "Krémes",
+        "fizetendo": 82187
+    },
+    {
+        "id": 12,
+        "name": "UPS",
+        "darab": 9,
+        "product": "Rákóczi túrós",
+        "fizetendo": 36631
+    },
+    {
+        "id": 13,
+        "name": "MetLife",
+        "darab": 26,
+        "product": "Almás pite",
+        "fizetendo": 20846
+    },
+    {
+        "id": 14,
+        "name": "HP",
+        "darab": 75,
+        "product": "Almás pite",
+        "fizetendo": 5439
+    },
+    {
+        "id": 15,
+        "name": "Walt Disney",
+        "darab": 32,
+        "product": "Rákóczi túrós",
+        "fizetendo": 95874
+    },
+    {
+        "id": 16,
+        "name": "Slack",
+        "darab": 83,
+        "product": "Almás pite",
+        "fizetendo": 51458
+    },
+    {
+        "id": 17,
+        "name": "Nike",
+        "darab": 24,
+        "product": "Almás pite",
+        "fizetendo": 60558
+    },
+    {
+        "id": 18,
+        "name": "Boeing",
+        "darab": 83,
+        "product": "Túrós rétes",
+        "fizetendo": 71922
+    },
+    {
+        "id": 19,
+        "name": "Bank of America",
+        "darab": 53,
+        "product": "Almás rétes",
+        "fizetendo": 89450
+    },
+    {
+        "id": 20,
+        "name": "Superhuman",
+        "darab": 41,
+        "product": "Túrós rétes",
+        "fizetendo": 20598
+    },
+    {
+        "id": 21,
+        "name": "PepsiCo",
+        "darab": 35,
+        "product": "Almás pite",
+        "fizetendo": 58166
+    },
+    {
+        "id": 22,
+        "name": "HP",
+        "darab": 37,
+        "product": "Túrós rétes",
+        "fizetendo": 30197
+    },
+    {
+        "id": 23,
+        "name": "Progressive",
+        "darab": 75,
+        "product": "Almás pite",
+        "fizetendo": 24640
+    },
+    {
+        "id": 24,
+        "name": "Postmates",
+        "darab": 50,
+        "product": "Túrós rétes",
+        "fizetendo": 49328
+    },
+    {
+        "id": 25,
+        "name": "Procter & Gamble",
+        "darab": 92,
+        "product": "Almás rétes",
+        "fizetendo": 70187
+    },
+    {
+        "id": 26,
+        "name": "Superhuman",
+        "darab": 27,
+        "product": "Túrós rétes",
+        "fizetendo": 59211
+    },
+    {
+        "id": 27,
+        "name": "PepsiCo",
+        "darab": 6,
+        "product": "Almás rétes",
+        "fizetendo": 16359
+    },
+    {
+        "id": 28,
+        "name": "General Electric",
+        "darab": 61,
+        "product": "Túrós rétes",
+        "fizetendo": 15524
+    },
+    {
+        "id": 29,
+        "name": "Nike",
+        "darab": 10,
+        "product": "Túrós béles",
+        "fizetendo": 68145
+    },
+    {
+        "id": 30,
+        "name": "General Motors",
+        "darab": 25,
+        "product": "Krémes",
+        "fizetendo": 88627
+    },
+    {
+        "id": 31,
+        "name": "HP",
+        "darab": 21,
+        "product": "Túrós rétes",
+        "fizetendo": 53401
+    },
+    {
+        "id": 32,
+        "name": "Intel",
+        "darab": 40,
+        "product": "Krémes",
+        "fizetendo": 58777
+    },
+    {
+        "id": 33,
+        "name": "Twitter",
+        "darab": 98,
+        "product": "Almás pite",
+        "fizetendo": 77281
+    },
+    {
+        "id": 34,
+        "name": "Progressive",
+        "darab": 42,
+        "product": "Túrós rétes",
+        "fizetendo": 97061
+    },
+    {
+        "id": 35,
+        "name": "Brex",
+        "darab": 30,
+        "product": "Túrós rétes",
+        "fizetendo": 44082
+    },
+    {
+        "id": 36,
+        "name": "PepsiCo",
+        "darab": 32,
+        "product": "Túrós rétes",
+        "fizetendo": 76890
+    },
+    {
+        "id": 37,
+        "name": "PepsiCo",
+        "darab": 35,
+        "product": "Almás pite",
+        "fizetendo": 18394
+    },
+    {
+        "id": 38,
+        "name": "Microsoft",
+        "darab": 19,
+        "product": "Rákóczi túrós",
+        "fizetendo": 80445
+    },
+    {
+        "id": 39,
+        "name": "Apple",
+        "darab": 16,
+        "product": "Rákóczi túrós",
+        "fizetendo": 74244
+    },
+    {
+        "id": 40,
+        "name": "UnitedHealth Group",
+        "darab": 43,
+        "product": "Rákóczi túrós",
+        "fizetendo": 86880
+    },
+    {
+        "id": 41,
+        "name": "IBM",
+        "darab": 73,
+        "product": "Krémes",
+        "fizetendo": 47978
+    },
+    {
+        "id": 42,
+        "name": "UPS",
+        "darab": 68,
+        "product": "Almás rétes",
+        "fizetendo": 52272
+    },
+    {
+        "id": 43,
+        "name": "Postmates",
+        "darab": 17,
+        "product": "Francia krémes",
+        "fizetendo": 39549
+    },
+    {
+        "id": 44,
+        "name": "Berkshire Hathaway",
+        "darab": 3,
+        "product": "Túrós béles",
+        "fizetendo": 80125
+    },
+    {
+        "id": 45,
+        "name": "AT&T",
+        "darab": 14,
+        "product": "Rákóczi túrós",
+        "fizetendo": 91187
+    },
+    {
+        "id": 46,
+        "name": "AT&T",
+        "darab": 97,
+        "product": "Almás pite",
+        "fizetendo": 19184
+    },
+    {
+        "id": 47,
+        "name": "Citigroup",
+        "darab": 58,
+        "product": "Krémes",
+        "fizetendo": 56776
+    },
+    {
+        "id": 48,
+        "name": "Cisco Systems",
+        "darab": 50,
+        "product": "Rákóczi túrós",
+        "fizetendo": 66554
+    },
+    {
+        "id": 49,
+        "name": "CVS Health",
+        "darab": 25,
+        "product": "Krémes",
+        "fizetendo": 85714
+    },
+    {
+        "id": 50,
+        "name": "UnitedHealth Group",
+        "darab": 84,
+        "product": "Rákóczi túrós",
+        "fizetendo": 40558
+    }
+]
