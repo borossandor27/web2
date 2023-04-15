@@ -1,0 +1,10 @@
+https://retoolapi.dev/tFpb3p/data
+
+GET https://retoolapi.dev/tFpb3p/data
+GET filter https://retoolapi.dev/tFpb3p/data?name=value
+GET by id: https://retoolapi.dev/tFpb3p/data/1
+GET paginate https://retoolapi.dev/tFpb3p/data?_page=2&_limit=10
+POST https://retoolapi.dev/tFpb3p/data
+PUT https://retoolapi.dev/tFpb3p/data/1
+PATCH https://retoolapi.dev/tFpb3p/data/1
+DELETE https://retoolapi.dev/tFpb3p/data/1
