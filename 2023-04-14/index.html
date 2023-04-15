@@ -33,12 +33,12 @@
             <div class="form-group">
                 <label for="darab">Mennyiség</label>
                 <input type="number" class="form-control" id="darab" aria-describedby="darabHelp"
-                    placeholder="Mennyiség" required>
+                    placeholder="Mennyiség" value="1" required>
                 <small id="darabHelp" class="form-text text-muted">Szállítandó mennyiség</small>
             </div>
             <div class="form-group">
                 <label for="fizetendo">Fizetendo</label>
-                <input type="number" class="form-control" id="fizetendo" aria-describedby="fizetendoHelp" required>
+                <input type="number" class="form-control" id="fizetendo" aria-describedby="fizetendoHelp" value="1000" step="150" required>
                 <small id="fizetendoHelp" class="form-text text-muted">Bruttó ár</small>
             </div>
             <div class="d-flex justify-content-evenly">
@@ -46,16 +46,12 @@
                 <button type="button" class="btn btn-outline-secondary" id="read">Read</button>
                 <button type="button" class="btn btn-outline-success" id="update">Update</button>
                 <button type="button" class="btn btn-outline-danger" id="delete">Delete</button>
-                <input type="hidden" id="id">
+                <input type="hidden" id="id" value="NULL">
             </div>
         </form>
         <div>
-            <ul class="pagination d-flex justify-content-center m-3">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <ul id="lapozas" class="pagination d-flex justify-content-center m-3">
+                
             </ul>
         </div>
         <div id="kartyak" class="row row-flex">

@@ -2,3 +2,29 @@
     width: 20rem;
     float: left;
 }
+
+.page-item {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.9rem;
+    margin: 0.1rem;
+    border: 1px solid #6c757d;
+    border-radius: 0.5rem;
+}
+.page-item:hover {
+    background-color:#6c757d;
+    color: white;
+}
+
+.card-header {
+    background-color: #CCFFFF;
+}
+h5.card-titles > span {
+    font-style: italic;
+}
+.card-header h5{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color:navy;
+    font-weight: bold;
+    text-shadow: 1px;
+}
