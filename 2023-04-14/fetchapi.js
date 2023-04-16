@@ -13,7 +13,7 @@ createButton.addEventListener("click", createNewRendelesItem);
 const readButton = document.getElementById("read");
 readButton.addEventListener("click", readAllRendeles);
 const updateButton = document.getElementById("update");
-readButton.addEventListener("click", updateRendeles);
+updateButton.addEventListener("click", updateRendeles);
 
 function createNewRendelesItem() {
   let url = "https://retoolapi.dev/tFpb3p/data"; //-- POST
@@ -47,8 +47,6 @@ function getDataJSON(params) {
   } else {
     rendelesItem = `{"id":"${id}","name":"${company}","product":"${product}","darab":"${darab}","fizetendo": "${fizetendo}"}`;
   }
-
-  console.log(rendelesItem);
   return JSON.parse(rendelesItem);
 }
 
@@ -131,7 +129,9 @@ function removeAllChild(parent) {
 }
 
 async function updateRendeles() {
+  alert("ok");
   let data = getDataJSON();
+  console.log(data);
   let url = "https://retoolapi.dev/tFpb3p/data/" + data.id;
   // Example POST method implementation:
   putData(url, data).then((data) => {
@@ -164,8 +164,16 @@ function lapozasUpdate() {
   removeAllChild(lapokLista);
   for (let index = 0; index < maxRendelesSzam / 10; index++) {
     let li = document.createElement("li");
-    li.appendChild(document.createTextNode(index));
+    li.appendChild(document.createTextNode(index + 1));
     li.setAttribute("class", "page-item");
+    li.addEventListener("click", function () {
+      lapozas(index + 1);
+    });
     lapokLista.appendChild(li);
   }
+}
+
+function lapozas(pageNum) {
+  actPageNum = pageNum;
+  readAllRendeles();
 }
