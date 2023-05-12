@@ -1,0 +1,10 @@
+https://retoolapi.dev/pHiOEV/data
+
+GET /pHiOEV/data
+GET filter /pHiOEV/data?Name=value
+GET by id /pHiOEV/data/1
+GET paginate /pHiOEV/data?_page=2&_limit=10
+POST /pHiOEV/data
+PUT /pHiOEV/data/1
+PATCH /pHiOEV/data/1
+DELETE /pHiOEV/data/1

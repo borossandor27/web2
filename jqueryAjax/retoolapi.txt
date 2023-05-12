@@ -1,0 +1,13 @@
+See all available endpoints here (generated with json-server).
+Endpoint URL https://retoolapi.dev/64IN22/data
+
+HTTP method endpoints
+
+GET /64IN22/data
+GET filter /64IN22/data?name=value
+GET by id /64IN22/data/1
+GET paginate /64IN22/data?_page=2&_limit=10
+POST /64IN22/data
+PUT /64IN22/data/1
+PATCH /64IN22/data/1
+DELETE /64IN22/data/1
