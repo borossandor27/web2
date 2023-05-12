@@ -144,6 +144,7 @@ async function updateRendeles() {
 async function putData(url = "", data = {}) {
   // JSON data parsed by `data.json()` call
   // Default options are marked with *
+  console.log(url, data);
   const response = await fetch(url, {
     method: "PUT", // *GET, POST, PUT, DELETE, etc.
     //mode: "cors", // no-cors, *cors, same-origin
