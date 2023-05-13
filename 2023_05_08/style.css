@@ -1,4 +1,12 @@
-.fa-remove {
+
+#people-table td:nth-child(5) {
     color: red;
     cursor: pointer;
+ text-align: center;
 }
+
+#people-table td:nth-child(6) {
+    color: #198754;
+    cursor: pointer;
+    text-align: center;
+   }
