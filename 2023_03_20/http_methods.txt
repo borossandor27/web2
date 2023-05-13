@@ -1,0 +1,19 @@
+CRUD - Create Read Update Delete
+    Create - Adatok létrehozása
+    Read - Adatok olvasása, lekérdezése
+    Update - Adat módosítása
+    Delete - Adat törlése
+
+Adatbázisoknál
+    Create - INSERT
+    Read - SELECT
+    Update - UPDATE
+    Delete - DELETE
+
+HTTP metódusok
+    Create - POST
+    Read - GET
+    Update - PATCH/PUT 
+        PATCH: részleges módosítás
+        PUT: teljes módosítás
+    Delete - DELETE

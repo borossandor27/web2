@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakori Javascript Események</title>
+</head>
+<body onload="alert('Betöltődött az oldal')">
+    <script>
+        alert('Lefutott a script');
+    </script>
+    <button onclick="alert('Sikeresen rákattintott a gombra')">Kattints rá!</button>
+    <p onclick="this.innerHTML = 'rákattintott a bekezdésre'">bekezdés kattintásra történik valami</p> <!-- this szó arra az elemre hivatkozik amin az esemény történt -->
+    <input type="text" onkeydown="alert('Beírt valamit')">
+    <div onmouseover="this.style.backgroundColor = 'green';" onmouseout="this.style.backgroundColor = 'red';" style="background-color: red;"> <p>húzd rá az egeret</p> </div>
+    <select onchange="alert('megváltozott')"> <!-- megváltozott az értéke, nem abelső tartalma --> 
+        <option value="1">Első</option>
+        <option value="2">Második</option>
+        <option value="3">Harmadik</option>
+    </select>
+    <input onblur="this.style.color = 'green'" onfocus="this.style.color = 'red'" type="text">
+    <!-- onload esemény -> betöltődött -> body, img, frame, iframe -->
+    <img onload="alert('betöltődött a kép')" src="https://get.pxhere.com/photo/landscape-water-nature-outdoor-horizon-silhouette-light-sky-sun-sunrise-sunset-sunlight-morning-lake-view-dawn-summer-dusk-evening-orange-reflection-red-scenic-color-yellow-clouds-sunset-sky-sunrise-sky-afterglow-sky-background-sunset-background-red-sky-at-morning-1058660.jpg" alt="tájkép">
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript típusok és vezérlési szerkezetek</title>
+</head>
+<body>
+    
+    <script>
+        // adattípúsok
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+            // változók típusát nem kell megadni, és változhat a típus
+        // boolean - logikai csak 2 érték igaz vagy hamis
+        var logikai = true;
+        var logikai2 = false;
+        // number - szám 
+            // bigint - maximális integer értéknél nagyobb számok tárolására alkalmas (max int ~2milliárd - 2^31 - 32 bites egész szám, de az első bit az előjelet jelzi)
+        var egesz = 3;
+        var tort = 5.2;
+        // string - szöveg
+        var szoveg = "sajt";
+        var karakter = 'c';
+        var formatumString = `ebbe a szövegbe változó értéke beírható ${szoveg}`; // backtick karakter altgr+7
+        // null - üres adatot jelzünk vele, csak ezt az egy értéket veheti fel
+        var ures = null;
+        // undefined - nincs definiálva - nem lett még érték adva
+        var ertek_nelkuli;
+        // object - objektumok - összetett adatszerkezetek.
+        var pont = { x: 10, y: 7, nev: "első pont"};
+
+        //tömbök / listák - több elem tárolására alkalmas - általában azonos típusú elemeket tárol
+        var lista = [2,7,5];
+
+
+        // vezérlési szerkezetek
+        // szekvencia - utasítások sorozata
+        var a = 10;
+        var b = 20;
+        // elágazás
+            // egyágú
+            // kettő vagy többágú
+        if (b > a) {
+            console.log("A b nagyobb");
+        }
+        if (a > b)
+            console.log("Az a nagyobb");
+            console.log("következő sor");
+        // Az utasításblokkot nem kötelező beljebb tabolni hanem kapcsoszárójelek közé kell helyezni, ami elhagyható, ha csak egy sor utasítást akarunk végrehajtani.
+        if (a < 5) {
+            console.log("kisebb mint 5");
+        } else {
+            console.log("nem kisebb mint 5");
+        }
+
+        var honapSzam = 3;
+        var evSzak = "";
+
+        // switch-case 
+        switch (honapSzam) {
+            case 1: case 2: case 12:
+                evSzak = "tél";
+                break;
+            case 3: 
+                evSzak = "tavasz";
+            default:  // Minden esetben lefut, ha nem léptünk ki break-el
+                evSzak = "Érvénytelen hónapszám"
+                break;
+        }
+        console.log(evSzak);
+
+        // ciklus - ismétli a végrehajtás - feltétel alapján
+        // előltesztelős
+        var szam = 0;
+        while (szam < 3) { 
+            console.log(szam);
+            szam++;
+            //A ciklusban változzon meg a feltétel, különben végtelen ciklus lesz.
+        }
+        // hátultesztelős
+        szam = 0;
+        do {
+            console.log(szam);
+            szam++;
+        } while (szam < 3);
+
+        var szam2 = 3;
+        while (szam2 < 3) { //belépési feltétel
+            console.log(szam2 + " while");
+            szam2++;
+        }
+        
+        do {
+            console.log(szam2+ " do-while");
+            szam2++;
+        } while (szam2 < 3); //bennmaradási feltétel
+        // számlálós
+        console.log("első for ciklus");
+        for (let index = 0; index < 5; index++) {
+            console.log(index);
+        } 
+        console.log("első for ciklus vége");
+            /*
+            //ugyanaz
+            let index = 0;
+            while (index < 5) {
+                console.log(index);
+
+                index++;
+            }*/
+
+        for (let index = 0; index < 5; index += 2) {
+            console.log(index);
+        }
+
+        console.log("csökkenő ciklus");
+
+        for (let index = 5; index > 0; index--) {
+            console.log(index);
+        }
+        // minden-elemre
+        console.log("foreach");
+        var lista2 = [1,7,3,9];
+        lista2.forEach(szam => {
+            console.log(szam);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+JavaScript
+böngésző által futtatott script nyelv
+ECMAScript - JavaScript verzió
+
+konzolon futtatható
+script taggel elhelyezhető a html dokumentumban
+
+változók:
+típusa van, de nem kötelező definiálni, és változhat a típus
+

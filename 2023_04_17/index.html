@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- Scriptek importálásának a sorrendje számít, előbb kell a jqueryt importálni és csak utána a saját scriptet -->
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Köszöntés</h2>
+            <div>
+                <input type="text" name="nev" id="nev_input">
+            </div>
+            <button id="koszonto_gomb">Köszöntés</button>
+            <p id="koszonto_szoveg"></p>
+        </section>
+
+        <section>
+            <h2>Villanykörte</h2>
+            <img src="pic_bulboff.gif" alt="Villanykörte">
+        </section>
+
+        <section>
+            <h2>Téglalap</h2>
+            <div>
+                <label for="a_input">a:</label>
+                <input type="number" id="a_input" placeholder="a">
+            </div>
+            <div>
+                <label for="b_input">b:</label>
+                <input type="number" id="b_input" placeholder="b">
+            </div>
+            <button id="hozzaad">Hozzáad</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>a</th><th>b</th><th>K</th><th>T</th>
+                    </tr>
+                </thead>
+                <tbody id="teglalap_tablazat">
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

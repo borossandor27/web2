@@ -1,0 +1,15 @@
+section p {
+    color: blue;
+}
+
+p {
+    color: red;
+}
+
+#bekezdes {
+    color: green;
+}
+
+.sajat {
+    color: yellow;
+}

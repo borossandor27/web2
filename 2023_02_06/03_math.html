@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math osztály</title>
+</head>
+<body>
+    <script>
+        /* Math osztály - Egy gyűjtemény ami különböző matematikai függvényeket és állandókat tartalmaz.
+            hatványozás, gyökvonás (pow - power, sqrt - squareroot)
+            kerekítés és annak verziói - round, ceil / floor, trunc
+            trigonomatriai műveletek - sin, cos, ...
+            min, max - több paraméterből választ ki minimumot / maximumot.
+            logaritmus (log)
+            random
+
+            Math.PI - 3.14...
+            Math.E - 2,71... (1 / n!)
+        */
+
+        function kerekitesek(szam) { 
+            console.log(`Math.round(${szam}):`, Math.round(szam));
+            console.log(`Math.floor(${szam}):`, Math.floor(szam));
+            console.log(`Math.ceil(${szam}):`, Math.ceil(szam));
+            // trunc - elhagyja a törtrészt, nem lefelé kerekítés, negatív számoknál más érték.
+            console.log(`Math.trunc(${szam}):`, Math.trunc(szam));
+        }
+
+        function trigonometriaiFuggvenyek() { 
+            // Radiánt várnak bemenő paraméterként
+            console.log("Math.sin(90°):", Math.sin(90 * Math.PI / 180));
+            console.log("Math.cos(90°):", Math.cos(90 * Math.PI / 180));
+         }
+
+        function veletlenSzam() {
+            console.log(Math.random()); // véletlen lebegőpontos számot generál [0,1[ intervallumból. (0 benne van, az 1 nincs);
+            console.log(veletlenEgesz(5, 17));
+        }
+
+        function veletlenEgesz(min, max) {
+            return Math.trunc(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log("KEREKÍTÉSEK:");
+        kerekitesek(0.49);
+        kerekitesek(3.5);
+        kerekitesek(4.52);
+        kerekitesek(-0.49);
+        kerekitesek(-3.5);
+        kerekitesek(-4.52);
+
+        console.log("");
+        console.log("TRIGONOMETRIA:");
+        trigonometriaiFuggvenyek();
+        console.log("");
+        console.log("Véletlen");
+        veletlenSzam();
+
+    </script>
+    
+</body>
+</html>

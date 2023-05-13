@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Űrlapok</title>
+    <script src="urlapok.js"></script>
+</head>
+<body>
+    <!--
+        Űrlapok - <form> taggel hozzuk létre
+            action - melyik oldalra (url) továbbítsa az űrlapot. Alapértelmezetten a jelenlegi oldal.
+            method - 2 értékel lehet GET, POST 
+                GET - megjelenik az URL-ben elküldés után -> oldalon belüli keresés vagy szűrésnél érdmes használni, fehasználói adat továbbításakor TILOS használni
+                POST - HTTP kérés tartalmaként kerül elküldésre, felhasználói adatot csak ezzel a módszerrel továbbítunk. HTTPS esetén titkosításra kerül!
+    -->
+    <form name="regisztracios_urlap" method="GET">
+        <div>
+            <label for="nev_input">Név:</label>
+            <input type="text" id="nev_input" name="nev" placeholder="Név">
+        </div>
+        <div>
+            <label for="email_input">E-mail:</label>
+            <input type="email" id="email_input" name="email" placeholder="E-mail">
+        </div>
+        <div>
+            <label>Nem:</label>
+            <input type="radio" id="nem_ferfi" name="nem" value="Férfi">
+            <label for="nem_ferfi">Férfi</label>
+            <input type="radio" id="nem_no" name="nem" value="Nő">
+            <label for="nem_no">Nő</label>
+            <input type="radio" id="nem_egyeb" name="nem" value="Egyéb">
+            <label for="nem_egyeb">Egyéb</label>
+        </div>
+        <div>
+            <label for="vegzettseg_input">Iskolai végzettség:</label>
+            <select name="vegzettseg" id="vegzettseg_input">
+                <option value="" selected disabled>Iskolai végzettség</option>
+                <option value="1">8 Általános iskola</option>
+                <option value="2">Érettségi</option>
+                <option value="3">Egyetem</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Honnan hallott rólunk:</label>
+            <input type="checkbox" name="honnan_hallott[]" id="honnan_facebook" value="facebook">
+            <label for="honnan_facebook">Facebook hirdetés</label>
+            <input type="checkbox" name="honnan_hallott[]" id="honnan_youtube" value="youtube">
+            <label for="honnan_youtube">Youtube reklám</label>
+            <input type="checkbox" name="honnan_hallott[]" id="honnan_ismeros" value="ismeros">
+            <label for="honnan_ismeros">Ismerős</label>
+            <input type="checkbox" name="honnan_hallott[]" id="honnan_tv" value="tv">
+            <label for="honnan_tv">Televíziós reklám</label>
+            <input type="checkbox" name="honnan_hallott[]" id="honnan_ujsag" value="ujsag">
+            <label for="honnan_ujsag">Újság</label>
+        </div>
+        <!-- ha nincs megadva a gomb típusa akkor submit típus -> elküldi az űrlapot és újratölti az oldalt. -->
+        <button type="button" id="regisztracio_gomb">Regisztráció</button>
+    </form>
+</body>
+</html>

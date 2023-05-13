@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js operátorok</title>
+</head>
+
+<body>
+    <h1>Nyisd meg a konzolt (ctrl+shift+i)</h1>
+    <script>
+        // Aritmetrikai operátorok
+        // Összeadás, kivonás, szorzás, osztás, maradékososztás, hatványozás
+        console.log('ARITMETIKAI OPERÁTOROK:');
+        console.log('12 + 5:', 12 + 5);
+        console.log('12 - 5:', 12 - 5);
+        console.log('12 * 5:', 12 * 5);
+        console.log('12 / 5:', 12 / 5);
+        console.log('12 % 5:', 12 % 5); // maradékos osztás, 12 5-el osztva 2-t ad maradékul
+        console.log('12 ** 2:', 12 ** 2); // hatványozás
+
+        // Értékadás operátor
+        console.log('');
+        console.log('ÉRTÉKADÁS:');
+        var a = 10;
+        console.log('a = 10:', a);
+        //a = a + 2;
+        a += 2;
+        console.log('a += 2:', a);
+        a -= 7;
+        console.log('a -= 7:', a);
+        a *= 2;
+        console.log('a *= 2:', a);
+        a /= 5;
+        console.log('a /= 5:', a);
+        a **= 2;
+        console.log('a **= 2:', a);
+
+        //string összefűzés operátor +
+        console.log('');
+        console.log('STRING ÖSSZEFŰZÉS:');
+        console.log("valami " + "összefűzve" + " több szövegből");
+        console.log("5 + 2:", 5 + 2);
+        console.log("'5' + 2:", '5' + 2);
+        //string + szám akkor is összegűzés hajt végre, ha a stringben található érték az szám, viszont ha mindkét oldalon szám van akkor összeadás történik.
+        console.log("2 + 3 + '5' + 2:", 2 + 3 + '5' + 2);
+
+        //logikai operátorok
+        // és   - &&
+        // vagy - ||
+        // nem  - !
+        // logikai műveletek igazságtáblázata:
+        var igaz = true;
+        var hamis = false;
+        console.log('');
+        console.log('LOGIKAI MŰVELETEK:');
+        console.log("igaz && hamis:", igaz && hamis);
+        console.log("igaz || hamis:", igaz || hamis);
+        console.log("!igaz:", !igaz);
+        console.log("!hamis:", !hamis);
+
+        //összehasonlító operátorok
+        // kisebb mint              - <
+        // kisebb vagy egyenlő      - <=
+        // nagyobb mint             - >
+        // nagyobb vagy egyenlő     - >=
+        // egyenlő                  - ==
+        // nem egyenlő              - !=
+        // tipusában is megegyező   - ===
+        // nem egyezik meg          - !==
+        console.log('');
+        console.log('ÖSSZEHASONLÍTÁS:');
+        console.log("'5' == 5:", '5' == 5);
+        console.log("'5' != 5:", '5' != 5);
+        console.log("'5' === 5:", '5' === 5);
+        console.log("'5' !== 5:", '5' !== 5);
+
+        //Tipus operátorok
+        // typeof       - visszaadja egy elem tipusát
+        // instanceof   - megvizsgálja, hogy elem bizonyos tipusú-e - logikai értéket ad vissza - csak összetett objektumoknál működik
+        console.log('');
+        console.log('TÍPUS OPERÁTOROK:');
+        console.log("typeof '13':", typeof '13');
+        console.log("typeof 13:", typeof 13);
+
+        console.log("'13' instanceof String:", '13' instanceof String);
+        console.log("new String('13') instanceof String:", new String('13') instanceof String);
+
+        //Háromlábú / feltételes operátor
+        // ?
+        // (logikai_feltétel) ? (érték_ha_feltétel_igaz) : (érték_ha_feltétel_hamis)
+        // : és a hamis ág elhagyható néhány nyelvben, de javascriptben nem.
+        console.log('');
+        console.log('HÁROMLÁBÚ OPERÁTOR:');
+        var valami = a < 2 ? "a < 2" : "a nem kisebb mint 2";
+        console.log(a);
+        console.log(valami);
+
+        valami = a < 5 ? "a < 5" : "a nem kisebb mint 5";
+        console.log(a);
+        console.log(valami);
+
+        console.log(a < 5 ? "a < 5" : "");
+
+        //Érték növelés / csökkentés ++ / --
+        // változó értékét növeli vagy csökkenti eggyel.
+        console.log('');
+        console.log('ÉRTÉK NÖVELÉS / CSÖKKENTÉS:');
+        var b = 5;
+        console.log("b = 5:", b);
+        b++;
+        console.log("b++:", b);
+        b--;
+        console.log("b--:", b);
+        //kiíratás és érték növelés egyszerre
+        console.log('ÉRTÉK NÖVELÉS ÉS KIÍRÁS EGYSZERRE');
+        console.log("b++:", b++);
+        console.log("b:", b);
+        console.log("++b:", ++b);
+        console.log("b:", b);
+        // ++ vagy -- ha a változó előtt van akkor előbb növeli az értéket utána adja át a függvénynek, amúgy előbb átadja az aktuális értéket és utána növel.
+
+        //bitwise operátorok - 32 bites számokon hajtódnak végre
+        // A számok 2-es számrendszer beli alakjával hajt végre műveleteket
+        console.log('');
+        console.log('BITWISE:');
+        console.log("2 & 3:", 2 & 3); //és: 0010 & 0011 -> 0010 -> 2
+        console.log("2 | 3:", 2 | 3); // vagy: 0010 | 0011 -> 0011 -> 3
+        console.log("~2:", ~2); // nem: ~ -> altgr + 1
+        console.log("~3:", ~3);
+        console.log("2 ^ 3:", 2 ^ 3); //kizáró-vagy - xor: vagy az egyik vagy a másik igaz, de mindkettő nem: ^ -> altgr + 3 majd szóköz
+
+        //eltolás biteket balra / jobbra
+        console.log('BIT ELTOLÁS:');
+        console.log("2 << 1:", 2 << 1);
+        console.log("3 << 1:", 3 << 1);
+        console.log("2 >> 1:", 2 >> 1);
+        console.log("3 >> 1:", 3 >> 1);
+        console.log("2 << 5:", 2 << 5);
+
+        // Műveleti sorrend itt is érvényes: https://www.w3schools.com/js/js_arithmetic.asp oldal alján megtalálható a műveleti sorrend
+
+    </script>
+</body>
+
+</html>

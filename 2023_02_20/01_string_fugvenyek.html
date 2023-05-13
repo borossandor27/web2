@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String függvények</title>
+</head>
+<body>
+    <script>
+        //STRINGEK DEKLARÁLÁSA
+        var str = "Gipsz";
+        var str2 = 'Jakab';
+        var str3 = "Trust me I'm an engineer";
+        var str4 = '"Trust me I am an engineer" - híres utolsó mondat';
+        var str5 = "\"Trust me I'm an engineer\" \n híres utolsó mondat";
+  
+        /*
+        Escape karakterek
+        \ után valami karakter megváltoztathatja a karakter jelentését
+        \" \' - ne érjen véget itt a string hanem a stringbe kerüljön be a karakter
+        \n - új sor
+        \t - tabulátor
+        \\ - backslash karaktert ír a szövegbe
+        https://www.tutorialspoint.com/escape-characters-in-javascript
+        */
+
+        //STRING TULAJDONSÁGOK
+
+        //String hossza
+        var str = "Ez egy string";
+        var hossz = str.length; //13
+        
+        //STRING FÜGGVÉNYEK
+
+        //kis és nagybetűssé alakítás
+        var kisbetus = str.toLowerCase();
+        var nagybetus = str.toUpperCase();
+        
+        //String összefűzés
+        var str = "Hello";
+        var str2 = "Világ";
+
+        var osszefuzve1 = str + " " + str2;
+        var osszefuzve2 = str.concat(" ", str2);
+
+        //Megadott indexű karakter lekérdezése - módosítani nem lehet vele
+        var str = "Yes";
+        var elsoKarakter = str.charAt(0);
+        var utolsoKarakter = str.charAt(str.length-1);
+        var nemLetezoIndexre = str.charAt(11);
+        //Újabb böngészőknél működik
+        var elsoKarakter = str[0];
+        var utolsoKarakter = str[str.length-1];
+        var nemLetezoIndexre = str[11];
+        //ezzel sem lehet módosítani, nem fut hibára de nem módosít
+        str[1] = 'E';
+
+        //Megadott indexű karakter ASCII kódjának legkérdezése
+        var str = "Hello";
+        var elsoKarakterASCII = str.charCodeAt(0);
+        var masodikKarakterASCII = str.charCodeAt(1);
+        var öBetuKarakterKodja = 'Ő'.charCodeAt(0);
+
+        //ASCII kódból karakterré alakítás
+        var str = String.fromCharCode(72, 101, 108, 108, 111);
+
+        //String egy részének a kivétele
+        var str = "Ez egy hosszabb szöveg, aminek majd szeretnénk egy részét kiírni";
+        var resz = str.substring(3);
+        var resz2 = str.slice(3);
+        var resz3 = str.substr(3);
+        
+        var resz = str.substring(3, 6);
+        var resz2 = str.slice(3, 6);
+        var resz3 = str.substr(3, 6);
+         
+        var resz = str.substring(6, 3);
+        var resz2 = str.slice(6, 3);
+        var resz3 = str.substr(6, 3);
+
+        var resz = str.substring(-3);
+        var resz2 = str.slice(-3);
+        var resz3 = str.substr(-3);
+        
+        var resz = str.substring(-3, -5);
+        var resz2 = str.slice(-3, -5);
+        var resz3 = str.substr(-3, -5);
+        
+        var resz = str.substring(-3, 5);
+        var resz2 = str.slice(-3, 5);
+        var resz3 = str.substr(-3, 5);
+
+        var resz = str.substring(-5, -3);
+        var resz2 = str.slice(-5, -3);
+        var resz3 = str.substr(-5, -3);
+        
+        var resz = str.substring(-5, 3);
+        var resz2 = str.slice(-5, 3);
+        var resz3 = str.substr(-5, 3);
+        /*függvények működése:
+            substring - kezdő és végső indexet vár, bármilyen sorrendben. Csak pozitív számokat tud értelmezni.
+            slice - kezdő és végső indexet vár, első paraméter a kezdő index, második a végső index. Negatív paraméter esetén a string végétől számol
+            subsrt - kezdő indexet és hosszt vár. kezdő index ha negatív a string végétől számol, a hossz csak pozitív lehet.
+         */
+        
+        //Stringben másik string keresése
+        var str = "Indul a görög aludni";
+        var keresendo = "görög";
+        // Benne van - igen vagy nem -> boolean
+        var benneVan = str.includes(keresendo);
+        var benneVan2 = str.includes(keresendo, 8);
+        var benneVan3 = str.includes(keresendo, 9);
+        // Hanyadik helyen van bennne -> index 0-tól -> -1 ha nincs
+        var holVanBenne = str.indexOf(keresendo);
+        var holVanBenne2 = str.indexOf("indul");
+        var holVanBenne3 = str.indexOf("Indul");
+
+        //több elem esetén
+        var str = "Mr. Blue has a blue house and a blue car";
+        var keresendo = "blue";
+        var keresendoRegex = /blue/i;
+        var benneVan = str.includes(keresendo);
+        var holVanBenne = str.indexOf(keresendo);
+        var holVanBenneUtoljara = str.lastIndexOf(keresendo);
+        var holVanBenneSearch = str.search(keresendoRegex);
+        
+        //Szövegben egy rész kicserélése
+        var str = "Mr. Blue has a blue house and a blue car";
+        var keresendo = "blue";
+        var keresendoRegex = /blue/i;
+        var keresendoRegex2 = /blue/ig;
+        var pirossal = str.replace(keresendo, "red");
+        var pirossal2 = str.replace(keresendoRegex, "red");
+        var pirossal3 = str.replace(keresendoRegex2, "red");
+        var pirossal4 = str.replaceAll(keresendo, "red"); //2021-es funkció, korábbi böngészőkben nem működik.
+        var atalakitani = /(blue|house)/ig;
+        var nagybetusre = str.replace(atalakitani, function(megtalalt) {
+            return megtalalt.toUpperCase();
+        });
+        
+        //Szóközök eltávolítása elejéről és a végéről
+        var str = "                    HELLO VILÁG            ";
+        var szokozokNelkul = str.trim();
+        var str = "                    HELLO VILÁG         \n      Második sor      ";
+        var szokozokNelkul2 = str.trim();
+        let result = str.replace(/^\s+|\s+$/gm,'');
+        
+        //Szöveg feladarabolása és tömbbe helyezése
+        var str = "Ez egy mondat\nTöbb sorral";
+        var tombbe = str.split(/\s+|\n/);
+        debugger; // Ha a böngésző vizsgáló ablakja nyitva van akkor a javascript kód futása itt megáll
+
+    </script>
+</body>
+</html>

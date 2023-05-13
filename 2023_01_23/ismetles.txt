@@ -1,0 +1,79 @@
+Kliens oldal - Frontend
+HTML - Szerkezet és tartalom leírása - leíró nyelv nem programozási nyelv
+CSS - Stílus, külalak
+JS - Felhasználói interakció
+
+
+Szerver oldal - backend 14.es témakör
+C# / php / js / python / java... - szerver oldali programozás 14. év backend tantárgy
+SQL
+
+
+HTML felépítése
+doctype - dokumentum típus definíciója
+head - információk az oldalról - metadata, oldal címe, teljes oldalra vonatkozó stílus beállítás, stb.
+body - A böngészőben megjelenő tartalom
+
+tag-ekből áll:
+<> </>
+pl.:
+<head> </head>
+
+címsorok
+bekezdések
+linkek
+multimédia: képek, videók, zene, másik html dokumentum, stb.
+
+
+Css:
+[szelektor] {
+    /* beállítások */
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+}
+
+szelektorok:
+body -> body taget formázza
+p -> p taget formázza
+.sajat -> "sajat" osztállyal (class) ellátott tageket fogja formázni
+#kapcsolat -> "kapcsolat" azonosítóval (id) ellátott tageket fogja formázni
+thead tr -> thead tagben lévő tr tageket fogja formázni
+
+css elhelyezése egy oldalon:
+head-ben style tag-be
+tag-be csak egy adott tag beállítása style attribútum
+.css fájl importálása
+
+ugyan annak a tagnek különbőző tulajdonságait formázzuk
+<section>
+ <p class="sajat" id="bekezdes">
+    Egy bekezdés
+ </p>
+</section>
+
+
+section p {
+    color: blue;
+}
+
+p {
+    color: red;
+}
+
+#bekezdes {
+    color: yellow;
+}
+
+.sajat {
+    color: green;
+}
+
+css specifikusság
+https://www.w3schools.com/css/css_specificity.asp
+azonos specifikusság esetén mindig az utolsó lép életbe
+
+
+JavaScript
+<script> taggel helyezhetjük el az oldalon.

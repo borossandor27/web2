@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektumok a javascriptben</title>
+</head>
+<body>
+    <script>
+        // objektum kapcsos zárójelek között
+        // nem kötelező osztályt definiálnunk
+        const ember = {
+            vezetekNev: "Gipsz",
+            keresztNev: "Jakab",
+            eletkor: 27, 
+            teljesNev: function () {
+                // this -> ez az elem, jelen esetben a 13. sorban definiált ember objektumra mutat.
+                console.log(this);
+                return this.vezetekNev + " " + this.keresztNev;
+            }
+        }
+
+        console.log(ember);
+        console.log(ember.vezetekNev);
+        console.log(ember.keresztNev);
+        console.log(ember.eletkor);
+        console.log(ember.teljesNev); // függvény referenciaként van átadva, a függvény definníciója került kiírásra
+        console.log(ember.teljesNev()); // Függvény meghívása, a függvény eredményét írja ki
+        console.log(this); // window objektumot ír ki - az a böngésző ablak amiben a html dokumentumunk található.
+    </script>
+    
+</body>
+</html>

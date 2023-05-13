@@ -1,0 +1,11 @@
+Előző gyakorlaton kimaradt
+"load" esemény még <frame> és <iframe> tageken is használható, ám ezen tagekkel a képzés során nem foglalkozunk. 
+
+feladatok megoldásához szükséges volt, de az előző órán kimaradt:
+elem stílusának szerkesztése js kódból.
+
+const htmlElem = document.getElementById("valami");
+htmlElem.style.color = "red";
+htmlElem.style.backgroundColor = "darkgreen";
+
+lásd 00_esemenyek.html

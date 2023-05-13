@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Események</title>
+    <script src="03_esemenyek.js"></script>
+</head>
+<!-- 
+    load esemény 2 tagen használható: 
+        body tagen - oldal betöltődött
+        img tagen - az adott kép betöltődött
+-->
+<body onload="esemenykezelokFelvetele()">
+    <button onclick="console.log('Rákattintott')">Gomb</button>
+
+    <form>
+        <div>
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" placeholder="Add meg a neved">
+        </div>
+        <button type="button" id="nevElkuld">Elküld</button>
+        <p id="koszontes"></p>
+    </form>
+
+    <section>
+        <h2>Kattints a villanykörtére</h2>
+        <img src="pic_bulboff.gif" alt="Villanykörte" height="150px" id="villanykorte">
+    </section>
+
+    <form>
+        <!-- input esemény, csak beviteli mezőkön használható - bele írtunk a beviteli mezőbe -->
+        <!-- focus / blur esemény beviteli mező ki lett jelölve vagy a kijelölés el lett távolítva -->
+        <input type="text" id="konzolosInput" oninput="kiirKonzolra();"
+            onfocus="konzolosFocus()" onblur="konzolosBlur()">
+        <p id="konzolosUtasitasok"></p>
+    </form>
+
+</body>
+</html>
