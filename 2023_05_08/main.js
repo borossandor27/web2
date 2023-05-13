@@ -2,12 +2,37 @@ const base_url = "https://retoolapi.dev/Gsgwbb/people";
 
 $(function () {
   listPeople();
-  $("#save").click(function () {
-    const personId = $("#personID").val();
-    console.log(personId);
-    updatePerson(personId);
+  $("#save").click(function (e) {
+    e.preventDefault();
+    const name = $("#name_input").val();
+    const email = $("#email_input").val();
+    const job = $("#job_input").val();
+    const id = $("#personID").val();
+
+    const person = {
+      id: id,
+      name: name,
+      email: email,
+      job: job,
+    };
+    $.ajax({
+      type: "PUT",
+      url: `${base_url}/${id}`,
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(person),
+      success: function (data, textStatus, jqXHR) {
+        if (textStatus === "success") {
+          listPeople();
+          $('button[type="button"]').prop("enabled", true);
+          console.log(textStatus);
+        }
+      },
+    });
+    //updatePerson();
   });
-  $("#person-form").submit(function (e) {
+
+   $("#person-form").submit(function (e) {
     e.preventDefault();
     const name = $("#name_input").val();
     const email = $("#email_input").val();
@@ -40,7 +65,9 @@ function readPerson(personId) {
       $("#name_input").val(data.name);
       $("#email_input").val(data.email);
       $("#job_input").val(data.job);
-      $("#pearsonID").val(data.id);
+      $("#personID").val(data.id);
+      $('button[type="submit"]').prop("disabled", true);
+      console.log($("#personID").val());
     },
     "json"
   );
@@ -50,20 +77,6 @@ function deletePerson(personId) {
   $.ajax({
     type: "DELETE",
     url: `${base_url}/${personId}`,
-    dataType: "json",
-    success: function (data, textStatus, jqXHR) {
-      if (textStatus === "success") {
-        listPeople();
-      }
-    },
-  });
-}
-function updatePerson(personId) {
-    
-  console.log($("#personID").val());
-  $.ajax({
-    type: "PUT",
-    url: `${base_url}/${$("#personID").val()}`,
     dataType: "json",
     success: function (data, textStatus, jqXHR) {
       if (textStatus === "success") {
@@ -96,4 +109,5 @@ function listPeople() {
     },
     "json"
   );
+  $('button[type="submit"]').prop("disabled", false);
 }
